@@ -1,4 +1,4 @@
-package com.bibliotique;
+package com.biblioteque;
 
 public class Lecteur {
 
