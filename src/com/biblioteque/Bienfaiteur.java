@@ -6,8 +6,7 @@ public class Bienfaiteur  {
 	public static int id = 0;
 	
 	public Bienfaiteur(String surnom, String mail, int carteFidelite) {
-		id++;
-		this.identifiant = id;
+		this.identifiant = ++id;
 		this.carteFidelite = carteFidelite;
 		this.surnom = surnom;
 		this.mail = mail;
