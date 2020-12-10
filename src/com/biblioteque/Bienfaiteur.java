@@ -17,7 +17,4 @@ public class Bienfaiteur extends Personne {
 	public void setSurnom(String surnom) {
 		this.surnom = surnom;
 	}
-
-	
-	
 }

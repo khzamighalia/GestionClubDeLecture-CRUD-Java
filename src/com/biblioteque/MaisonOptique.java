@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Bibliotheque {
+public class MaisonOptique {
 	private List<Bienfaiteur> Bienfaiteur;
 	private List<Livre> Livre;
 	private Bienfaiteur B1;
 	private Livre L1;
 	
-	public Bibliotheque() {
+	public MaisonOptique() {
 		Bienfaiteur = new ArrayList<Bienfaiteur>();
 		Livre = new ArrayList<Livre>();
 	}
