@@ -1,10 +1,8 @@
 package com.biblioteque;
-
 import java.util.Scanner;
-
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 	    Scanner in = new Scanner(System.in);
 		MaisonOptique maisonOptique = new MaisonOptique();
 		int choix1 = 0, choix2 = 0, id, dateEdition, num_tele, carteFidelite;
@@ -49,7 +47,7 @@ public class Main {
 			    if(choix1 == 1) {
 			    	switch(choix2){
 				    	case 0: 
-				    		System.out.println("\n\n");
+				    		in.notifyAll();
 							break;
 						case 1: 
 							System.out.println("Entrer le titre de livre :");
@@ -113,77 +111,83 @@ public class Main {
 							maisonOptique.AjouterLecteur(lecteur);
 							break;
 						case 2: 
-							System.out.println("Enter id de livre");
+							System.out.println("Enter id de lecteur");
 							id = in.nextInt();
-							maisonOptique.SupprimerLivre(id);
+							maisonOptique.SupprimerLecteur(id);
 							break;
 						case 3:
-							System.out.println("Entrer l'id de livre :");
+							System.out.println("Entrer l'id de lecteur :");
 							id = in.nextInt();
-							if(maisonOptique.RechercherLivre(id) != null) {
-								System.out.println("Entrer le titre de livre :");
+							if(maisonOptique.RechercherLecteur(id) != null) {
+								System.out.println("Entrer le nom de lecteur :");
 								in.nextLine();
-								titre = in.nextLine();
-								System.out.println("Entrer l'édition de livre :");
-								edition = in.nextLine();
-								System.out.println("Entrer la date d’édition de livre :");
-								dateEdition = in.nextInt();
-								maisonOptique.ModifierLivre(titre, edition, dateEdition, id);
+								nom = in.nextLine();
+								System.out.println("Entrer le prenom de lecteur :");
+								prenom = in.nextLine();
+								System.out.println("Entrer le mail de lecteur :");
+								mail = in.nextLine();
+								System.out.println("Entrer le numéro téléphone de lecteur :");
+								num_tele = in.nextInt();
+								System.out.println("Entrez le nombre de livres que ce lecteur a lu :");
+								carteFidelite = in.nextInt();
+								maisonOptique.ModifierLecteur(nom, prenom, num_tele, mail, carteFidelite, id);
 							}
 							break;
 						case 4: 
-							maisonOptique.AfficherLivres();
+							maisonOptique.Afficherlecteurs();
 							break;
 						case 5: 
-							System.out.println("Entrer l'id de livre :");
+							System.out.println("Entrer l'id de lecteur :");
 							id = in.nextInt();
-							maisonOptique.AfficherLivre(id);
+							maisonOptique.AfficherLecteur(id);
 							break;
 						default : System.out.println("** - Votre choix est invalide"); break;
 					}
 			    }
+			    
+			    
 			    else if(choix1 == 3) {
 			    	switch(choix2){
 						case 0: 
 							System.out.println("\n\n");
 							break;
 						case 1: 
-							System.out.println("Entrer le titre de livre :");
+							System.out.println("Entrer le surnom de Bienfaiteur :");
 							in.nextLine();
-							titre = in.nextLine();
-							System.out.println("Entrer l'édition de livre :");
-							edition = in.nextLine();
-							System.out.println("Entrer la date d’édition de livre :");
-							dateEdition = in.nextInt();
-							Livre livre = new Livre(titre, edition, dateEdition);
-							maisonOptique.AjouterLivre(livre);
+							surnom = in.nextLine();
+							System.out.println("Entrer le mail de Bienfaiteur :");
+							mail = in.nextLine();
+							System.out.println("Entrez le nombre de livres que ce Bienfaiteur a déposé :");
+							carteFidelite = in.nextInt();
+							Bienfaiteur bienfaiteur = new Bienfaiteur(surnom, mail, carteFidelite);
+							maisonOptique.AjouterBienfaiteur(bienfaiteur);
 							break;
 						case 2: 
-							System.out.println("Enter id de livre");
+							System.out.println("Enter id de Bienfaiteur");
 							id = in.nextInt();
-							maisonOptique.SupprimerLivre(id);
+							maisonOptique.SupprimerBienfaiteur(id);
 							break;
 						case 3:
-							System.out.println("Entrer l'id de livre :");
+							System.out.println("Entrer l'id de Bienfaiteur :");
 							id = in.nextInt();
-							if(maisonOptique.RechercherLivre(id) != null) {
-								System.out.println("Entrer le titre de livre :");
+							if(maisonOptique.RechercherBienfaiteur(id) != null) {
+								System.out.println("Entrer le surnom de Bienfaiteur :");
 								in.nextLine();
-								titre = in.nextLine();
-								System.out.println("Entrer l'édition de livre :");
-								edition = in.nextLine();
-								System.out.println("Entrer la date d’édition de livre :");
-								dateEdition = in.nextInt();
-								maisonOptique.ModifierLivre(titre, edition, dateEdition, id);
+								surnom = in.nextLine();
+								System.out.println("Entrer le mail de Bienfaiteur :");
+								mail = in.nextLine();
+								System.out.println("Entrez le nombre de livres que ce Bienfaiteur a déposé :");
+								carteFidelite = in.nextInt();
+								maisonOptique.ModifierBienfaiteur(surnom, mail, carteFidelite, id);
 							}
 							break;
 						case 4: 
-							maisonOptique.AfficherLivres();
+							maisonOptique.AfficherBienfaiteurs();
 							break;
 						case 5: 
-							System.out.println("Entrer l'id de livre :");
+							System.out.println("Entrer l'id de Bienfaiteur :");
 							id = in.nextInt();
-							maisonOptique.AfficherLivre(id);
+							maisonOptique.AfficherBienfaiteur(id);
 							break;
 						default : System.out.println("** - Votre choix est invalide"); break;
 					}
