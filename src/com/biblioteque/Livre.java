@@ -3,12 +3,11 @@ package com.biblioteque;
 import java.util.Date;
 
 public class Livre {
-	private int identifiant;
+	private int identifiant, dateEdition;
 	private String titre, edition;
-	private Date dateEdition;
 	public static int id = 0;
 	
-	public Livre(String titre, String edition, Date dateEdition) {
+	public Livre(String titre, String edition, int dateEdition) {
 		this.identifiant = ++id;
 		this.titre = titre;
 		this.edition = edition;
@@ -31,11 +30,11 @@ public class Livre {
 		this.edition = edition;
 	}
 
-	public Date getDateEdition() {
+	public int getDateEdition() {
 		return dateEdition;
 	}
 
-	public void setDateEdition(Date dateEdition) {
+	public void setDateEdition(int dateEdition) {
 		this.dateEdition = dateEdition;
 	}
 

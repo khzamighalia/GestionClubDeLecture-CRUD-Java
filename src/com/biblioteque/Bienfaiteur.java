@@ -1,24 +1,14 @@
 package com.biblioteque;
 
-public class Bienfaiteur  {
-	private int identifiant, carteFidelite;
-	private String surnom, mail;
+public class Bienfaiteur extends Personne {
+	private String surnom;
 	public static int id = 0;
 	
 	public Bienfaiteur(String surnom, String mail, int carteFidelite) {
-		this.identifiant = ++id;
-		this.carteFidelite = carteFidelite;
+		super(mail,carteFidelite,++id);
 		this.surnom = surnom;
-		this.mail = mail;
 	}
 
-	public int getCarteFidelite() {
-		return carteFidelite;
-	}
-
-	public void setCarteFidelite(int carteFidelite) {
-		this.carteFidelite = carteFidelite;
-	}
 
 	public String getSurnom() {
 		return surnom;
@@ -28,17 +18,6 @@ public class Bienfaiteur  {
 		this.surnom = surnom;
 	}
 
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public int getIdentifiant() {
-		return identifiant;
-	}
 	
 	
 }
