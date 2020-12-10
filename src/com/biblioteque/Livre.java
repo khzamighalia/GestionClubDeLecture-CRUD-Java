@@ -1,7 +1,5 @@
 package com.biblioteque;
 
-import java.util.Date;
-
 public class Livre {
 	private int identifiant, dateEdition;
 	private String titre, edition;

@@ -1,37 +1,41 @@
 package com.biblioteque;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MaisonOptique {
-	private List<Bienfaiteur> Bienfaiteur;
-	private List<Livre> Livre;
+	private List<Bienfaiteur> listBienfaiteur;
+	private List<Livre> listLivre;
+	private List<Lecteur> listLecteur;
 	private Bienfaiteur B1;
 	private Livre L1;
+	private Lecteur L2;
 	
 	public MaisonOptique() {
-		Bienfaiteur = new ArrayList<Bienfaiteur>();
-		Livre = new ArrayList<Livre>();
+		listBienfaiteur = new ArrayList<Bienfaiteur>();
+		listLivre = new ArrayList<Livre>();
+		listLecteur = new ArrayList<Lecteur>();
 	}
+	
+	// les methodes des Bienfaiteur
 	
 	public void AjouterBienfaiteur(Bienfaiteur bienfaiteur) {
 		// TODO Auto-generated method stub
-		Bienfaiteur.add(bienfaiteur);
-		System.out.println("Le bienfaiteur a été ajouté avec success");
+		listBienfaiteur.add(bienfaiteur);
+		System.out.println("Le bienfaiteur a été ajouté avec success"+ "\n\n");
 	}
 	
 	public Bienfaiteur RechercherBienfaiteur(int id){
 		boolean test = false;
-		for(int i = 0;i<Bienfaiteur.size();i++) {	
-			if(Bienfaiteur.get(i).getIdentifiant() == id) {
-				B1 = Bienfaiteur.get(i);
+		for(int i = 0;i<listBienfaiteur.size();i++) {	
+			if(listBienfaiteur.get(i).getIdentifiant() == id) {
+				B1 = listBienfaiteur.get(i);
 				test = true;
 				break;
 			}
 		}
 		if(test == false) {
-			System.out.println("pardon il n'exisit pas se bienfaiteur");
+			System.out.println("pardon il n'exisit pas se bienfaiteur"+ "\n\n");
 			return null;
 		}
 		else {
@@ -43,8 +47,8 @@ public class MaisonOptique {
 		
 		if(RechercherBienfaiteur(id) != null) {
 			B1 = RechercherBienfaiteur(id);
-			Bienfaiteur.remove(B1);
-			System.out.println("Le bienfaiteur a été supprimé avec success");
+			listBienfaiteur.remove(B1);
+			System.out.println("Le bienfaiteur a été supprimé avec success"+ "\n\n");
 		}
 	}
 	
@@ -54,7 +58,7 @@ public class MaisonOptique {
 			B1.setSurnom(surnom);
 			B1.setMail(mail);
 			B1.setCarteFidelite(carteFidelite);
-			System.out.println("Le bienfaiteur a été modifier avec success");
+			System.out.println("Le bienfaiteur a été modifier avec success"+ "\n\n");
 		}
 	}
 	
@@ -68,7 +72,7 @@ public class MaisonOptique {
 			else {
 				type="normal";
 			}
-			System.out.println("Surnom : "+B1.getSurnom()+", mail : "+B1.getMail()+", le nombre des livres offerts : "+B1.getCarteFidelite()+", type : "+type);
+			System.out.println("Surnom : "+B1.getSurnom()+", mail : "+B1.getMail()+", le nombre des livres offerts : "+B1.getCarteFidelite()+", type : "+type+ "\n\n");
 		}
 	}
 	
@@ -76,36 +80,39 @@ public class MaisonOptique {
 		int j=0;
 		String type;
 		System.out.println("\n\nList Bienfaiteurs");
-		for(int i = 0;i<Bienfaiteur.size();i++) {	
-			if(Bienfaiteur.get(i).getCarteFidelite() >=3) {
+		for(int i = 0;i<listBienfaiteur.size();i++) {	
+			if(listBienfaiteur.get(i).getCarteFidelite() >=3) {
 				type="super-fidèle";
 				j++;
 			}
 			else {
 				type="normal";
 			}
-			System.out.println("Surnom : " + Bienfaiteur.get(i).getSurnom() + ", mail : " +  Bienfaiteur.get(i).getMail() + ", le nombre des livres offerts : " + Bienfaiteur.get(i).getCarteFidelite() + ", type : " + type);
+			System.out.println("Surnom : " + listBienfaiteur.get(i).getSurnom() + ", mail : " +  listBienfaiteur.get(i).getMail() + ", le nombre des livres offerts : " + listBienfaiteur.get(i).getCarteFidelite() + ", type : " + type);
 		}
-		System.out.println("Le nombre total des bienfaiteurs est : " + Bienfaiteur.size());
-		System.out.println("Le nombre total des bienfaiteurs super-fidèles est : " + j);
+		System.out.println("Le nombre total des bienfaiteurs est : " + listBienfaiteur.size());
+		System.out.println("Le nombre total des bienfaiteurs super-fidèles est : " + j + "\n\n");
 	}
+	
+	
+	// les methodes des Livre
 	
 	public void AjouterLivre(Livre livre) {
 		// TODO Auto-generated method stub
-		Livre.add(livre);
-		System.out.println("Le livre a été ajouté avec success");
+		listLivre.add(livre);
+		System.out.println("Le livre a été ajouté avec success"+ "\n\n");
 	}
 	public Livre RechercherLivre(int id){
 		boolean test = false;
-		for(int i = 0;i<Livre.size();i++) {	
-			if(Livre.get(i).getIdentifiant() == id) {
-				L1 = Livre.get(i);
+		for(int i = 0;i<listLivre.size();i++) {	
+			if(listLivre.get(i).getIdentifiant() == id) {
+				L1 = listLivre.get(i);
 				test = true;
 				break;
 			}
 		}
 		if(test == false) {
-			System.out.println("pardon il n'exisit pas se livre");
+			System.out.println("pardon il n'exisit pas se livre"+ "\n\n");
 			return null;
 		}
 		else {
@@ -117,8 +124,8 @@ public class MaisonOptique {
 		
 		if(RechercherLivre(id) != null) {
 			L1 = RechercherLivre(id);
-			Livre.remove(L1);
-			System.out.println("Le livre a été supprimé avec success");
+			listLivre.remove(L1);
+			System.out.println("Le livre a été supprimé avec success"+ "\n\n");
 		}
 	}
 	
@@ -128,21 +135,101 @@ public class MaisonOptique {
 			L1.setTitre(titre);
 			L1.setEdition(edition);
 			L1.setDateEdition(dateEdition);
-			System.out.println("Le livre a été modifier avec success");
+			System.out.println("Le livre a été modifier avec success"+ "\n\n");
 		}
 	}
 	
 	public void AfficherLivre(int id){
 		if(RechercherBienfaiteur(id) != null) {
 			L1 = RechercherLivre(id);
-			System.out.println("titre : " + L1.getTitre() + ", edition : " +  L1.getEdition() + ", dateEdition : " + L1.getDateEdition());
+			System.out.println("titre : " + L1.getTitre() + ", edition : " +  L1.getEdition() + ", dateEdition : " + L1.getDateEdition()+ "\n\n");
 		}
 	}
 	
 	public void AfficherLivres() {
-		for(int i = 0;i<Livre.size();i++) {	
-			System.out.println("titre : " + Livre.get(i).getTitre() + ", edition : " +  Livre.get(i).getEdition() + ", dateEdition : " + Livre.get(i).getDateEdition());
+		for(int i = 0;i<listLivre.size();i++) {	
+			System.out.println("titre : " + listLivre.get(i).getTitre() + ", edition : " +  listLivre.get(i).getEdition() + ", dateEdition : " + listLivre.get(i).getDateEdition());
 		}
-		System.out.println("Le nombre total des livres est : " + Livre.size());
+		System.out.println("Le nombre total des livres est : " + listLivre.size()+ "\n\n");
 	}
+	
+	
+	// les methodes des Lecteur
+	
+		public void AjouterLecteur(Lecteur lecteur) {
+			// TODO Auto-generated method stub
+			listLecteur.add(lecteur);
+			System.out.println("Le lecteur a été ajouté avec success"+ "\n\n");
+		}
+		public Lecteur RechercherLecteur(int id){
+			boolean test = false;
+			for(int i = 0;i<listLecteur.size();i++) {	
+				if(listLecteur.get(i).getIdentifiant() == id) {
+					L2 = listLecteur.get(i);
+					test = true;
+					break;
+				}
+			}
+			if(test == false) {
+				System.out.println("pardon il n'exisit pas se lecteur"+ "\n\n");
+				return null;
+			}
+			else {
+				return L2;
+			}
+		}
+		
+		public void SupprimerLecteur(int id){
+			
+			if(RechercherLecteur(id) != null) {
+				L2 = RechercherLecteur(id);
+				listLecteur.remove(L2);
+				System.out.println("Le lecteur a été supprimé avec success"+ "\n\n");
+			}
+		}
+		
+		public void ModifierLecteur(String nom, String prenom, int num_tele, String mail, int carteFidelite, int id){
+			if(RechercherLecteur(id) != null) {
+				L2 = RechercherLecteur(id);
+				L2.setNom(nom);
+				L2.setPrenom(prenom);
+				L2.setNum_tele(num_tele);
+				L2.setMail(mail);
+				L2.setCarteFidelite(carteFidelite);
+				System.out.println("Le livre a été modifier avec success"+ "\n\n");
+			}
+		}
+		
+		public void AfficherLecteur(int id){
+			if(RechercherLecteur(id) != null) {
+				L2 = RechercherLecteur(id);
+				String type;
+				if(L2.getCarteFidelite() >=3) {
+					type="fidèle";
+				}
+				else {
+					type="normal";
+				}
+				System.out.println("nom : " + L2.getNom()+ ", prenom : " +  L2.getPrenom() + ", num_tele : " + L2.getNum_tele() +", mail : "+L2.getMail()+", le nombre des livres offerts : "+L2.getCarteFidelite()+", type : "+type+ "\n\n");
+			}
+		}
+		
+		public void Afficherlecteurs() {
+			int j=0;
+			String type;
+			System.out.println("\n\nList Lecteurs");
+			for(int i = 0;i<listLecteur.size();i++) {	
+				if(listLecteur.get(i).getCarteFidelite() >=3) {
+					type="fidèle";
+					j++;
+				}
+				else {
+					type="normal";
+				}
+				System.out.println("nom : " + listLecteur.get(i).getNom()+ ", prenom : " +  listLecteur.get(i).getPrenom() + ", num_tele : " + listLecteur.get(i).getNum_tele() +", mail : "+listLecteur.get(i).getMail()+", le nombre des livres offerts : "+listLecteur.get(i).getCarteFidelite()+", type : "+type);
+			}
+			System.out.println("Le nombre total des lecteurs est : " + listLecteur.size());
+			System.out.println("Le nombre total des Lecteurs fidèles est : " + j+ "\n\n");
+		}
+	
 }
